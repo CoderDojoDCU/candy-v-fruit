@@ -110,29 +110,6 @@ div.userinfo {
 	padding: 20px;
 }
 
-div.row {
-	width: 790px;
-	height: 40px;
-}
-
-div.col {
-	width: 35px;
-	height: 35px;
-	border: 1px solid #7BADEA;
-	float: left;
-	background: #503400;
-}
-
-.gridinfo {
-	width: 35px;
-	height: 35px;
-	border: 1px solid #7BADEA;
-	float: left;
-	color: #503400;
-	background: none;
-	text-align: center;
-}
-
 div.inputDiv {
     color: red;
 }
