@@ -1,0 +1,152 @@
+<html>
+	<div class="learningInfo"> 1 start by creating a blank web page with a title </div>
+	<head>
+		<title>CoderDojo - Ping Game</title>
+	</head>
+	<div class="learningInfo"> 2 Add the web page body take with all the content you want to appear on the screen </div>
+	<body onload="setup(100)">
+		<div id="gameDiv">
+			<div class="topPanel">
+				<div id="heading">Ping Game</div>
+				<div>Click the reversed CoderDojo logo to win points</div>
+				<div class="score">
+					<div class="scoreTitle">SCORE</div>
+					<div id="score">0</div>
+				</div>	
+			</div>
+			<div id="ping">
+			</div>
+			<div id="logo">
+				<img src="coderdojologo.png"/>
+			</div>
+		</div>
+	</body>
+	<div class="learningInfo"> 3 Add style to your game  </div>
+	<style>
+			body {
+				background: #F4F6B7;
+				padding-left: 10%;
+				padding-right: 10%;
+				margin-bottom: 0px;
+				margin-top: 0px;
+				height:100%;
+				font-family: Comic Sans MS;
+				color: #fff;
+			}
+
+			#gameDiv {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 0px;
+				width: 100%;
+				height: 100%;
+				background: #7BADEC;
+				border-image:url(cd-border.png) 0 100% repeat;
+				border-width: 20px;
+				border-top: 0px;
+				border-bottom: 0px;
+			}
+
+			#logo {
+				margin: 30px;
+				position: absolute; 
+				bottom: 0px;
+			}
+
+			#imageRow {
+				width: 100%;
+			}
+
+			.score {
+				margin: 30px;
+				float: right;
+				border: 5px solid #6c5529;
+				height: 120px;
+				width: 250px;
+				box-shadow: 8px 8px 5px #6c5529;
+				background: #17412F;
+				text-align: center;
+			}
+
+			.scoreTitle {
+				font-size: 30px;
+			}
+
+			#score {
+				font-size: 60px;
+			}
+
+			#heading {
+				margin: 30px;
+				color: #E60A15;
+				font-size: 60px;
+				float: left;
+				text-align: center;
+			}
+
+			.topPanel {
+				width: 100%;
+				float: left;
+			}
+
+			.learningInfo {
+				display: none;
+			}
+
+			.pingimage {
+				width: 10%;
+			}
+	</style>
+	<div class="learningInfo"> 4 Add the game code </div>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+		var score;
+
+		function drawRows() {
+			for(var row = 0; row < 3; row++) {
+				draw10Images(row);
+			}	
+		}
+
+		function draw10Images(row) {
+			var rowHtml = "<div class='imageRow'>";
+			for(var imageNo = 0; imageNo < 10; imageNo++ ) {
+				var imageId = ""+row+imageNo;
+				rowHtml = rowHtml + "<img id='"+imageId+"' src='coder.png' class='pingimage'/>";
+			}
+			rowHtml += "</div>";
+			$("#ping").append(rowHtml);
+		}
+
+		function displayReverseImage() {
+			var row = Math.floor(Math.random() * 3);
+			var imageNo = Math.floor(Math.random() * 10);
+			var imageId =  "#"+row+imageNo;
+			$(imageId).attr("src", "coder-reverse.png");
+			$(imageId).click(function() {
+				setup(score+100);
+			});
+		}
+
+		function setScore(newScore) {
+			score = newScore;
+			$("#score").html(score);
+		}
+		
+		function setup(newScore) {
+			$("#ping").empty();
+			setScore(newScore);
+			drawRows();
+			reduceScore();
+			displayReverseImage();
+		}
+
+		function reduceScore() {
+			if(score > 0) {
+				setScore(score-5);
+				setTimeout(reduceScore, 500);
+			}
+		}
+		
+	</script>
+</html>

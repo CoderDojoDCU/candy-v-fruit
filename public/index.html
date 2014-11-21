@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Candy v Fruit</title>
+		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+		<link href='css/style.css'  rel='stylesheet' type='text/css'>
+		<script src="jquery.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/game.js"></script>
+	</head>
+	
+	<body>		
+		<div id="gameDiv">
+			<div class="topPanel">
+				<div id="heading">Candy 
+					<span class="heading-v">v</span> 
+					<span class="heading-fruit">Fruit</span>
+				</div>
+				<div class="userinfo">
+					<div class="inputDiv">
+						<input id="name" type="text"  placeholder="name" class="input"></input>
+					</div>
+					<div class="buttons">
+						<button id="send" onclick="play()">Play</button>
+					</div>
+				</div>
+				<div class="score">
+					<div class="scoreTitle">SCORE</div>
+					<div id="score">0</div>
+				</div>	
+			</div>
+			<div id="game">
+			</div>
+
+			<div id="logo">
+				<img src="images/coderdojologo.png"/>
+			</div>
+		</div>		
+	</body>
+</html>
