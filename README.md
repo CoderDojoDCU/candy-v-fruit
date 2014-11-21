@@ -1,6 +1,6 @@
-# CoderDojo - Start Node - Create a social network
+# CoderDojo - Start Node - Candy v Fruit
 
-This is an introduction to server side programming in Node.js and was created for CoderDojo members. The aim of this session is to create a social network in 2 hours! which we can then launch and sell for billions 
+This is an introduction to server side programming in Node.js and was created for CoderDojo members. The aim of this game is to teach the fundamentals of programming and server side prorgamming in a fun way.
 
 ## Step 1 Install Node
 
@@ -31,7 +31,7 @@ Now run
 npm install express
 ````
 
-## Turn it into a social website and Install socket.io 
+## Turn it into a communication, multiplayer game with socket.io 
 
 Socket.io is a technology that allows browsers to easily communicate with the server over streams.  
 
@@ -43,7 +43,7 @@ npm install socket.io
 
 ## Now lets create our Node.js file
 
-Now in the home directory __coderdojo-start-node__ save a new file called __app.js__.  Inside app.js add the following code
+Now in the home directory __candy-v-fruit__ save a new file called __app.js__.  Inside app.js add the following code
 
 ````
 var express = require('express');
