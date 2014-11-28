@@ -27,3 +27,16 @@ function getUserId(name) {
 function addUser(userData) {
 	alert(userData.name);
 }
+
+function drawGrid() {
+	for(var row = 0; row <= 10; row=row+1) {
+		var rowHtml = '<div class="row">';
+		for(var col = 0; col <= 20; col=col+1){
+			var colHtml = '<div class="col"></div>';
+			rowHtml = rowHtml + colHtml;
+		}
+		rowHtml = rowHtml + '</div>';
+		$("#game").append(rowHtml);
+	}
+}
+

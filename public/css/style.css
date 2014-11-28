@@ -124,3 +124,17 @@ button {
     float: left;
     height: 35px;
 }
+
+.row {
+	width: 790px;
+	height: 40px;
+}
+
+.col {
+	width: 35px;
+	height: 35px;
+	border: 1px solid #7BADEA;
+	float: left;
+	background: #503400;
+}
+
