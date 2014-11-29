@@ -146,3 +146,14 @@ div#icons {
 	top: 100px;
 }
 
+div.icon {
+	border: 2px solid black;
+	float: left;
+	width: 45px;
+	height: 45px;
+}
+
+img.gameIcon {
+	width: 100%;
+}
+
