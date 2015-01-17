@@ -2,7 +2,15 @@
 var socket = io.connect('http://localhost:3000');
 
 var alpha = ['A','B','C','D','E','F','G','H','I','J']
-    
+
+var image1 = {};
+image1.file = "images/candy0.png";
+image1.name = "candy0";
+image1.type = "candy";
+image1.score = -10;
+
+var images = [image1];
+
 socket.on('user', function (userData) {
     addUser(userData)
 });
@@ -37,6 +45,16 @@ function drawGrid() {
 		}
 		rowHtml = rowHtml + '</div>';
 		$("#game").append(rowHtml);
+	}
+}
+
+function addImages() {
+	$("#icons").empty();
+	for(var imageNumber = 0; imageNumber < images.length; 
+		imageNumber=imageNumber+1) {
+		var image = images[imageNumber];
+		var iconHtml = "<div class='icon'>";
+		iconHtml = iconHtml + "<img class='gameIcon' src='"+image.file+"'";
 	}
 }
 

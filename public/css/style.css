@@ -24,8 +24,8 @@ body {
 
 #logo {
 	margin: 30px;
-	position: absolute; 
 	bottom: 0px;
+	position: absolute;
 }
 
 #imageRow {
@@ -140,10 +140,14 @@ button {
 
 div#icons {
 	height: 50px;
-	width: 500px;
+	width: 450px;
 	border: 3px solid #6C5529;
-	position: absolute;
-	top: 100px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	box-shadow: 8px 8px 5px #444;
+	background: #444;
+	position: relative;
+	float: left;
 }
 
 div.icon {
@@ -155,5 +159,6 @@ div.icon {
 
 img.gameIcon {
 	width: 100%;
+	height: 100%;
 }
 
