@@ -9,7 +9,15 @@ image1.name = "candy0";
 image1.type = "candy";
 image1.score = -10;
 
-var images = [image1];
+var image2 = {};
+image2.file = "images/candy1.png";
+image2.name = "candy1";
+image2.type = "candy";
+image2.score = -21;
+
+var images = [image1, image2];
+
+
 
 socket.on('user', function (userData) {
     addUser(userData)
@@ -55,6 +63,31 @@ function addImages() {
 		var image = images[imageNumber];
 		var iconHtml = "<div class='icon'>";
 		iconHtml = iconHtml + "<img class='gameIcon' src='"+image.file+"'";
+		iconHtml = iconHtml + " onclick='moveIcon("+imageNumber+")' /img>";
+		iconHtml = iconHtml + "</div>";
+		$("#icons").append(iconHtml);
+
 	}
 }
+
+function setup() {
+	addImages();
+}
+
+window.onload = setup;
+
+function moveIcon(imagePosition) {
+	var image = images[imagePosition];
+	alert(image.score);
+}
+
+
+
+
+
+
+
+
+
+
 
