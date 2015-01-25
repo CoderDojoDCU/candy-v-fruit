@@ -11,11 +11,29 @@ image1.score = -10;
 
 var image2 = {};
 image2.file = "images/candy1.png";
-image2.name = "candy1";
+image2.name = "choc cup cake";
 image2.type = "candy";
 image2.score = -21;
 
-var images = [image1, image2];
+var image3 = {};
+image3.file = "images/candy4.png";
+image3.name = "cup cake";
+image3.type = "candy";
+image3.score = -31;
+
+var image4 = {};
+image4.file = "images/candy5.png";
+image4.name = "pretzel";
+image4.type = "candy";
+image4.score = -50;
+
+var image5 = {};
+image5.file = "images/candy6.png";
+image5.name = "jammy dodger";
+image5.type = "candy";
+image5.score = -46;
+
+var images = [image1, image2, image3, image4, image5];
 
 
 
