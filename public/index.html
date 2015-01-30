@@ -19,22 +19,33 @@
 					<span class="heading-v">v</span> 
 					<span class="heading-fruit">Fruit</span>
 				</div>
-				<div class="userinfo">
-					<div class="inputDiv">
-						<input id="name" type="text"  placeholder="name" class="input"></input>
+				<div id="welcome" class="active ui-dialog"
+					title="Candy v Fruit Game" width="500">
+	                <p>Multiplayer network candy v fruit battleship game</p>
+	                <ol> 
+	                	<li></li>
+	                </ol>
+	                <p>Enjoy!</p>
+	                <p>Made by Coderdojo DCU</p>
+					<div id="createGame">
+						<button id="newgame" onclick="newGame()">New Game</button>
 					</div>
-					<div class="buttons">
-						<button id="send" onclick="play()">Play</button>
+					<div class="userinfo" id="userInfo">
+						<div class="inputDiv">
+							<input id="name" type="text"  placeholder="name" class="input"></input>
+						</div>
+						<div class="buttons">
+							<button id="send" onclick="play()">Play</button>
+						</div>
 					</div>
-				</div>
+	            </div>
+
 				<div class="score">
 					<div class="scoreTitle">SCORE</div>
 					<div id="score">0</div>
 				</div>	
 			</div>
 			<div id="icons">
-				
-
 			</div>
 			<div id="game">
 			</div>

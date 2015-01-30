@@ -11,35 +11,55 @@ image1.score = -10;
 
 var image2 = {};
 image2.file = "images/candy1.png";
-image2.name = "choc cup cake";
+image2.name = "candy1";
 image2.type = "candy";
 image2.score = -21;
 
 var image3 = {};
 image3.file = "images/candy4.png";
-image3.name = "cup cake";
+image3.name = "candy3";
 image3.type = "candy";
-image3.score = -31;
+image3.score = -30;
 
 var image4 = {};
 image4.file = "images/candy5.png";
-image4.name = "pretzel";
+image4.name = "candy4";
 image4.type = "candy";
 image4.score = -50;
 
 var image5 = {};
 image5.file = "images/candy6.png";
-image5.name = "jammy dodger";
+image5.name = "candy6";
 image5.type = "candy";
-image5.score = -46;
+image5.score = -50;
 
-var images = [image1, image2, image3, image4, image5];
+var fruit1 = {};
+fruit1.file = "images/fruit1.png";
+fruit1.name = "fruit1";
+fruit1.type = "fruit";
+fruit1.score = 75;
 
+var fruit2 = {};
+fruit2.file = "images/fruit2.png";
+fruit2.name = "fruit2";
+fruit2.type = "fruit";
+fruit2.score = 100;
 
+var easterEgg = {};
+easterEgg.file = "images/coder.png";
+easterEgg.name = "easteregg";
+easterEgg.type = "easteregg";
+easterEgg.score = 0;
+
+var images = [image1, image2, image3, image4, image5, fruit1, fruit2, easterEgg];
 
 socket.on('user', function (userData) {
     addUser(userData)
 });
+
+function startUp() {
+	$( "#welcome" ).dialog();
+}
 
 function play() {
 	var userData = {};
@@ -90,6 +110,7 @@ function addImages() {
 
 function setup() {
 	addImages();
+	startUp();
 }
 
 window.onload = setup;

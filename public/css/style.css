@@ -162,3 +162,8 @@ img.gameIcon {
 	height: 100%;
 }
 
+.active {
+  color: #fff !important;
+  background: #7BADEC !important;
+}
+
