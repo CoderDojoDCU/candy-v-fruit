@@ -23,9 +23,10 @@ body {
 }
 
 #logo {
-	margin: 30px;
-	bottom: 0px;
-	position: absolute;
+	width: 300px;
+	margin-left: 150px;
+	padding-top: 40px;
+	float: left;
 }
 
 #imageRow {
@@ -86,13 +87,13 @@ body {
 }
 
 .input {
-    color: #D21316;
+    color: #fff;
     font-size: 15px;
     margin: 5px;
     vertical-align: top;
     width: 200px;
-    background: #7BADEC;
-    border: 1px solid #7BADEC;
+    background: #444444;
+    border: 1px solid #444444;
     border-bottom: 1px solid #D21316;
     float: left;
     height: 25px;
@@ -108,6 +109,7 @@ div.userinfo {
 
 #game {
 	padding: 20px;
+	float: left;
 }
 
 div.inputDiv {
@@ -128,6 +130,7 @@ button {
 .row {
 	width: 790px;
 	height: 40px;
+	z-index: 100;
 }
 
 .col {
@@ -164,6 +167,8 @@ img.gameIcon {
 
 .active {
   color: #fff !important;
-  background: #7BADEC !important;
+  background: #444444 !important;
 }
+
+
 

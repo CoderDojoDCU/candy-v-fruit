@@ -58,7 +58,15 @@ socket.on('user', function (userData) {
 });
 
 function startUp() {
-	$( "#welcome" ).dialog();
+	$( "#welcome" ).dialog(({
+	   modal: true,
+	   open: function(){
+	      jQuery('.ui-widget-overlay').bind('click',function(){
+	         dialogopen.dialog('close');
+	      });
+	   },
+	   width: "500px"
+}));
 }
 
 function play() {
