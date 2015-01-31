@@ -18,7 +18,7 @@
 				<div id="heading">Candy 
 					<span class="heading-v">v</span> 
 					<span class="heading-fruit">Fruit</span>
-					
+
 				</div>
 				<div id="logo">
 					<img src="images/coderdojologo.png"/>
@@ -41,20 +41,22 @@
 	                </ol>
 	                <p>Enjoy!</p>
 	                <p>Made by Coderdojo DCU</p>
-					<div id="createGame">
+					<div id="createGame"  style="display:none">
+						<div class="inputDiv">
+							<input id="gamename" type="text"  placeholder="Game Name" class="input"></input>
+						</div>
 						<button id="newgame" onclick="newGame()">New Game</button>
 					</div>
+
 					<div class="userinfo" id="userInfo">
 						<div class="inputDiv">
 							<input id="name" type="text"  placeholder="name" class="input"></input>
 						</div>
 						<div class="buttons">
-							<button id="send" onclick="play()">Play</button>
+							<button id="send" onclick="addPlayer()">Play</button>
 						</div>
 					</div>
 	            </div>
-
-
 			<div id="icons">
 			</div>
 			<div id="game">

@@ -69,13 +69,23 @@ function startUp() {
 }));
 }
 
-function play() {
+function addPlayer() {
 	var userData = {};
 	var name = $("#name").val();
 	userData.name = name;
 	userData.id = getUserId(name);
-	socket.emit('user', userData);
+	//send this to server as post json
+	addPlayerSuccess();
+}
+
+function addPlayerFailed() {
+	//error here for non unique name
+
+}
+
+function addPlayerSuccess() {
 	drawGrid();
+	$( "#welcome" ).dialog( "close" );
 }
 
 function getUserId(name) {
@@ -117,16 +127,53 @@ function addImages() {
 }
 
 function setup() {
+	launchGame();
 	addImages();
 	startUp();
+}
+
+function launchGame() {
+	ajaxCall("GET", "gameon", null,function (data) {
+        console.log(data);
+    });
+}
+
+function ajaxCall(type, url, data, success, error) {
+	var body = JSON.stringify(data);
+    $.ajax({
+            type : type,
+            url : url,
+            data : body,
+            success : function(response) {
+            	console.log(response)
+            	success(response)
+            },
+            dataType : "json",
+            contentType : 'application/json',
+            error : function(jqXHR, textStatus, errorThrown) {	
+               console.log(jqXHR)
+               try {
+	               	if(jqXHR.responseJSON) {
+	               	   console.log("Error returned "+jqXHR.responseJSON.error)
+		               error(jqXHR.responseJSON) 
+		            } else {
+		            	var response = jQuery.parseJSON(jqXHR.responseText)
+		                error(response) 
+		            }
+	            } catch (err) {
+	            	console.log(err);
+	            }
+            }
+    });
 }
 
 window.onload = setup;
 
 function moveIcon(imagePosition) {
 	var image = images[imagePosition];
-	alert(image.score);
 }
+
+
 
 
 
