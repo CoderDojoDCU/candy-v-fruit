@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser')
 var data = require('./gamedata.json');
+var fs = require('fs');
 
 var gameStarted = false;
 var startTime;
@@ -27,8 +28,32 @@ app.get('/gameon', function(req, res){
 });
 
 app.post('/addplayer', function(req, res) {
+   console.log(req.body);
+   console.log(data.players);
+   addPlayer(req.body.id, req.body.name);
    res.status(200).jsonp(req.body);
 });
+
+function addPlayer(id, name) {
+  var player = {};
+  player.id = id;
+  player.name = name;
+  data.players.push(player);
+  console.log(data.players);
+  updateGameDataToFile();
+}
+
+function updateGameDataToFile() {
+  fs.writeFile('./gamedata.json', 
+    JSON.stringify(data, null, 4), 
+    function(err) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("JSON saved to file");
+      }
+  }); 
+}
 
 function isGameOn() {
 	if(startTime && startTime != "") {

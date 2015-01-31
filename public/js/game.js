@@ -75,7 +75,8 @@ function addPlayer() {
 	userData.name = name;
 	userData.id = getUserId(name);
 	//send this to server as post json
-	addPlayerSuccess();
+	ajaxCall("POST", "/addplayer", userData, 
+		addPlayerSuccess, addPlayerFailed);
 }
 
 function addPlayerFailed() {
@@ -83,7 +84,8 @@ function addPlayerFailed() {
 
 }
 
-function addPlayerSuccess() {
+function addPlayerSuccess(data) {
+	console.log(data);
 	drawGrid();
 	$( "#welcome" ).dialog( "close" );
 }
