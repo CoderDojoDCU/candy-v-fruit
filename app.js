@@ -27,12 +27,43 @@ app.get('/gameon', function(req, res){
    res.send(isGameOn());
 });
 
+app.get('/cleargame', function(req, res) {
+	clearData();	
+	res.send("cleared");
+});
+
+app.get('/gamename', function (req, res) {
+	res.send(data.name);
+});
+
+function clearData() {
+	data.name = "";
+	data.started = "";
+	data.players = [];
+	updateGameDataToFile();
+}
+
 app.post('/addplayer', function(req, res) {
    console.log(req.body);
    console.log(data.players);
+   checkFirstPlayer(req.body.name);
    addPlayer(req.body.id, req.body.name);
    res.status(200).jsonp(req.body);
 });
+
+function checkFirstPlayer(playerName) {
+	if(data.players.length == 0) {
+		setupGame(playerName);
+	}
+}
+
+function setupGame(playerName) {
+	data.name = playerName + "'s game";
+	var startTime = new Date();
+	startTime.setMinutes(startTime.getMinutes() +1);
+	data.started = startTime;
+	updateGameDataToFile();
+}
 
 function addPlayer(id, name) {
   var player = {};
