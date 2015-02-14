@@ -9,7 +9,6 @@ var gameStarted = false;
 var startTime;
 
 var server = app.listen(3000, function() {
-    stateTime = data.started;
     console.log('Listening on port %d', server.address().port);
 });
 
@@ -59,7 +58,7 @@ function checkFirstPlayer(playerName) {
 
 function setupGame(playerName) {
 	data.name = playerName + "'s game";
-	var startTime = new Date();
+	startTime = new Date();
 	startTime.setMinutes(startTime.getMinutes() +1);
 	data.started = startTime;
 	updateGameDataToFile();
