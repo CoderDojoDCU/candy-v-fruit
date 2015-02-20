@@ -1,5 +1,10 @@
 {
-    "name": "",
-    "started": "",
-    "players": []
+    "name": "Noel's game",
+    "started": "2015-02-20T21:02:14.184Z",
+    "players": [
+        {
+            "id": "Noel902553",
+            "name": "Noel"
+        }
+    ]
 }

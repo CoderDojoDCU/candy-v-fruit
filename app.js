@@ -47,7 +47,7 @@ app.post('/addplayer', function(req, res) {
    console.log(data.players);
    checkFirstPlayer(req.body.name);
    addPlayer(req.body.id, req.body.name);
-   res.status(200).jsonp(req.body);
+   res.status(200).jsonp(data.started);
 });
 
 function checkFirstPlayer(playerName) {

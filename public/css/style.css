@@ -23,7 +23,7 @@ body {
 }
 
 #logo {
-	width: 300px;
+	width: 20%;
 	margin-left: 150px;
 	padding-top: 40px;
 	float: left;
@@ -38,17 +38,17 @@ body {
 	float: right;
 	border: 5px solid #6c5529;
 	height: 80px;
-	width: 250px;
+	width: 20%;
 	box-shadow: 8px 8px 5px #6c5529;
 	background: #17412F;
 	text-align: center;
 }
 
-.scoreTitle {
+.infoTitle {
 	font-size: 20px;
 }
 
-#score {
+#info {
 	font-size: 30px;
 }
 
@@ -170,5 +170,14 @@ img.gameIcon {
   background: #444444 !important;
 }
 
+#resetButton {
+	float: left;
+	border: 3px solid #6C5529;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	box-shadow: 8px 8px 5px #444;
+	background: #444;
+	height: 60px;
+}
 
 

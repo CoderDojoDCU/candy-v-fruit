@@ -13,7 +13,7 @@
 	</head>
 	
 	<body>		
-		<div id="gameDiv">
+		<div id="gameDiv">	
 			<div class="topPanel">
 				<div id="heading">Candy 
 					<span class="heading-v">v</span> 
@@ -24,9 +24,9 @@
 					<img src="images/coderdojologo.png"/>
 				</div>
 				<div class="score">
-					<div class="scoreTitle">SCORE</div>
-					<div id="score">0</div>
-				</div>	
+					<div class="infoTitle" id="infoTitle"></div>
+					<div id="info"></div>
+				</div>
 			</div>
 
 			<div id="welcome" class="active ui-dialog"
@@ -59,6 +59,9 @@
 	            </div>
 			<div id="icons">
 			</div>
+			<button id="resetButton" onclick="resetGame()">
+				Reset Game
+			</button>
 			<div id="game">
 			</div>
 

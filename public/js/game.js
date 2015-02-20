@@ -86,8 +86,17 @@ function addPlayerFailed() {
 
 function addPlayerSuccess(data) {
 	console.log(data);
-	drawGrid();
-	$( "#welcome" ).dialog( "close" );
+	var registerDate = new Date(data);
+	createCountDown(registerDate);
+}
+
+function createCountDown(registerDate) {
+	if(registerDate > new Date()) {
+		drawGrid();
+		$( "#welcome" ).dialog( "close" );
+	} else {
+		alert('Game started');
+	}
 }
 
 function getUserId(name) {
@@ -147,7 +156,7 @@ function ajaxCall(type, url, data, success, error) {
             url : url,
             data : body,
             success : function(response) {
-            	console.log(response)
+            	console.log("SUCCESS: ", success);
             	success(response)
             },
             dataType : "json",
@@ -175,15 +184,14 @@ function moveIcon(imagePosition) {
 	var image = images[imagePosition];
 }
 
-
-
-
-
-
-
-
-
-
+function resetGame() {
+	ajaxCall('GET', '/cleargame', '',
+		function (data) {
+			alert('cleared');
+		}, function (err) {
+			console.log(err);
+		});
+}
 
 
 
