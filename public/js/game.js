@@ -53,6 +53,8 @@ easterEgg.score = 0;
 
 var images = [image1, image2, image3, image4, image5, fruit1, fruit2, easterEgg];
 
+var score = 0;
+
 socket.on('user', function (userData) {
     addUser(userData)
 });
@@ -86,16 +88,25 @@ function addPlayerFailed() {
 
 function addPlayerSuccess(data) {
 	console.log(data);
-	var registerDate = new Date(data);
-	createCountDown(registerDate);
+	var startDate = new Date(data);
+	createCountDown(startDate);
 }
 
-function createCountDown(registerDate) {
-	if(registerDate > new Date()) {
+function createCountDown(startDate) {
+	if(startDate > new Date()) {
 		drawGrid();
 		$( "#welcome" ).dialog( "close" );
+		countDown(startDate);
 	} else {
-		alert('Game started');
+		alert('Game started, please wait');
+	}
+}
+
+function countDown(startDate) {
+	var now = new Date();
+	var timeout = (startDate.getTime() - now.getTime())/1000;
+	if(timeout > 0) {
+		$("#info").text(timeout);
 	}
 }
 
