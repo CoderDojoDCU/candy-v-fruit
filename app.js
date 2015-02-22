@@ -50,6 +50,10 @@ app.post('/addplayer', function(req, res) {
    res.status(200).jsonp(data.started);
 });
 
+app.get('/players', function (req, res) {
+  res.send(data.players);
+});
+
 function checkFirstPlayer(playerName) {
 	if(data.players.length == 0) {
 		setupGame(playerName);

@@ -107,7 +107,27 @@ function countDown(startDate) {
 	var timeout = (startDate.getTime() - now.getTime())/1000;
 	if(timeout > 0) {
 		$("#info").text(timeout);
+		setTimeout(function() {
+			countDown(startDate)
+		}, 200);
+	} else {
+		initialiseScore();
+		getPlayers();
 	}
+}
+
+function initialiseScore() {
+	score = 0;
+	$("#infoTitle").text("SCORE");
+	$("#info").text(score);
+}
+
+function getPlayers() {
+	ajaxCall("GET", "/players", '', loadPlayers);
+}
+
+function loadPlayers(players) {
+	alert(players);
 }
 
 function getUserId(name) {
