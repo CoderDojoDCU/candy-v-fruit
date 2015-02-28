@@ -127,8 +127,28 @@ function getPlayers() {
 }
 
 function loadPlayers(players) {
-	alert(players);
+	$("#playersList").empty();
+	var playersHtml = '';
+	for(var playerNo = 0; playerNo < players.length;
+		playerNo = playerNo + 1) {
+		var player = players[playerNo];
+		playersHtml = playersHtml + "<div class='playerDiv'>";
+		playersHtml = playersHtml + "<div class='playerName'>";
+		playersHtml = playersHtml + player.name + "</div>";
+		playersHtml = playersHtml + "<div class='playerScore'>";
+		playersHtml = playersHtml + getPlayerScore(player)+ "</div>";
+		playersHtml = playersHtml + "</div>";
+	}
+	$("#playersList").html(playersHtml);
 }
+
+function getPlayerScore(player) {
+	if(!player.score) {
+		return 0;
+	}
+	return player.score;
+}
+
 
 function getUserId(name) {
 	var id = name;
