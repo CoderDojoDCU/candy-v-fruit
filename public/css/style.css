@@ -55,12 +55,15 @@ body {
 #heading {
 	margin: 10px;
 	margin-top: 20px;
-	color: #D21316;
-	font-size: 40px;
 	float: left;
 	font-weight: bolder;
 	text-align: center;
 	font-family: 'Rock Salt', cursive;
+}
+
+.heading-candy {
+	color: #D21316;
+	font-size: 40px;
 }
 
 .heading-v {
