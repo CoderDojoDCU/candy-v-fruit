@@ -127,7 +127,7 @@ function getPlayers() {
 }
 
 function loadPlayers(players) {
-	
+	alert(players);
 }
 
 function getUserId(name) {

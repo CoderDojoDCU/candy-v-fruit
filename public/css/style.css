@@ -118,7 +118,6 @@ div.userinfo {
 	width: 800px;
 }
 
-
 div.inputDiv {
     color: red;
 }
@@ -187,4 +186,8 @@ img.gameIcon {
 	height: 60px;
 }
 
+#players {
+	width: 250px;
+	border: 2px solid #503400;
+}
 
